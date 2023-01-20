@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { useState, useEffect } from 'react'
-const url = 'http://ipwho.is/'
+const url = 'https://ipwho.is/'
 
 export const useCountry = () => {
   const [localCountry, setLocalCountry] = useState([])
