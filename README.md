@@ -1,2 +1,0 @@
-# MRWorldwide
-MRWorldwide news app
