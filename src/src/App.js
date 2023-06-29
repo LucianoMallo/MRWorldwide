@@ -18,17 +18,16 @@ function App () {
   const ChangeCategory = (category) => {
     setCategory(category)
   }
-  
+
   const ChangeCountry = (country) => {
     setCountry(country)
-
   }
   return (
     <MainFrame className='App'>
       <header className='App-header'>
         <SelectCountryDropdown onChange={ChangeCountry} />
         <Title className='Title'> Mr Worldwide </Title>
-        <NavigationBar categories={data} onChange = {ChangeCategory}/>
+        <NavigationBar categories={data} onChange={ChangeCategory} />
       </header>
       <p>Insert here a web page</p>
     </MainFrame>

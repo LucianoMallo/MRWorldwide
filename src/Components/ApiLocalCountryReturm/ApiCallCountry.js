@@ -1,14 +1,30 @@
-import axios from 'axios'
-import { useState, useEffect } from 'react'
+// import { useState, useEffect } from 'react'
 const url = 'https://ipwho.is/'
 
-export const useCountry = () => {
-  const [localCountry, setLocalCountry] = useState([])
-  useEffect(() => {
-    axios.get(url).then((response) => {
-      setLocalCountry([response.data.country, response.data.country_code.toLowerCase()])
-    })
-  }, [url])
-  return [localCountry, setLocalCountry]
+export const GetCountry = async () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(async () => {
+      try {
+        const response = await fetch(url)
+        if (!response.ok) {
+          reject(new Error(`Error: ${response.status}`))
+        }
+        const data = await response.json()
+        resolve(data)
+      } catch (error) {
+        reject(error)
+      }
+    }, 2000)
+  })
 }
-export default useCountry
+
+// export const GetCountry = () => {
+//   const [localCountry, setLocalCountry] = useState([])
+//   useEffect(() => {
+//     fetch(url)
+//       .then(response => response.json())
+//       .then(data => setLocalCountry([data.country, data.country_code.toLowerCase()]))
+//   }, [])
+//   return [localCountry, setLocalCountry]
+// }
+// export default GetCountry

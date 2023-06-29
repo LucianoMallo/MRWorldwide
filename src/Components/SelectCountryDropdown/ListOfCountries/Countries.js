@@ -43,6 +43,7 @@ export const Countries =
   { name: 'Slovenia', code: 'si' },
   { name: 'South Africa', code: 'za' },
   { name: 'South Korea', code: 'kr' },
+  { name: 'Spain', code: 'es' },
   { name: 'Sweden', code: 'se' },
   { name: 'Switzerland', code: 'ch' },
   { name: 'Taiwan', code: 'tw' },
